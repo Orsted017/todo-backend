@@ -22,7 +22,7 @@ const pool = new Pool({
 // GET — получить все задачи
 app.get('/todos', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM todos ORDER BY id DESC');
+    const result = await pool.query('SELECT * FROM todos');
     res.json(result.rows);
   } catch (err) {
     console.error(err.message);
